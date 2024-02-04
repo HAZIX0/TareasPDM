@@ -45,5 +45,5 @@ https://youtu.be/9xZKlSpdcWg
 
 ## Referencias
 
-Flutter. ToggleButtons class. API Flutter Dev. Disponible en: https://api.flutter.dev/flutter/material/ToggleButtons-class.html [Accedido: 26 Ene 2022].
-Dmitry Zhifarsky. avoid-returning-widgets. DCM. Disponible en: https://dcm.dev/docs/rules/flutter/avoid-returning-widgets/ [Accedido: 26 Ene 2022].
+Flutter. ToggleButtons class. API Flutter Dev. Disponible en: https://api.flutter.dev/flutter/material/ToggleButtons-class.html [Accedido: 26 Ene 2024].
+Dmitry Zhifarsky. avoid-returning-widgets. DCM. Disponible en: https://dcm.dev/docs/rules/flutter/avoid-returning-widgets/ [Accedido: 26 Ene 2024].

@@ -46,8 +46,8 @@ https://youtu.be/ZeN2iEbiz3Q
 
 ## Referencias
 
-Flutter. ListTile class. API Flutter Dev. Disponible en: https://api.flutter.dev/flutter/material/ListTile-class.html [Accedido: 3 Feb 2022].
+Flutter. ListTile class. API Flutter Dev. Disponible en: https://api.flutter.dev/flutter/material/ListTile-class.html [Accedido: 3 Feb 2024].
 
-Flutter. LinearGradient class. API Flutter Dev. Disponible en: https://api.flutter.dev/flutter/painting/LinearGradient-class.html [Accedido: 3 Feb 2022].
+Flutter. LinearGradient class. API Flutter Dev. Disponible en: https://api.flutter.dev/flutter/painting/LinearGradient-class.html [Accedido: 3 Feb 2024].
 
-CopsOnRoad. How to change the entire theme's text color in Flutter?. StackOverFlow. Disponible en: https://stackoverflow.com/a/57239060 [Accedido: 3 Feb 2022].
+CopsOnRoad. How to change the entire theme's text color in Flutter?. StackOverFlow. Disponible en: https://stackoverflow.com/a/57239060 [Accedido: 3 Feb 2024].
