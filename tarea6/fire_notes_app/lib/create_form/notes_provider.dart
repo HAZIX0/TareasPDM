@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:image_picker/image_picker.dart';
@@ -31,7 +32,27 @@ class NotesProvider with ChangeNotifier {
     }
   }
 
-  Future<void> editExistingNote(String noteReference) async {}
+  Future<bool> editExistingNote(
+      String noteReference, Map<String, dynamic> updatedNoteContent) async {
+    try {
+      isLoading = true;
+      notifyListeners();
+
+      await FirebaseFirestore.instance
+          .collection("notes")
+          .doc(noteReference)
+          .update(updatedNoteContent);
+
+      isLoading = false;
+      notifyListeners();
+      return true;
+    } catch (e) {
+      print("Error editing note: ${e.toString()}");
+      isLoading = false;
+      notifyListeners();
+      return false;
+    }
+  }
 
   Future<bool> removeExistingNote(String noteReference) async {
     print("entre");
@@ -101,6 +122,33 @@ class NotesProvider with ChangeNotifier {
     } else {
       print("No image selected");
       _selectedPicture = null;
+    }
+  }
+
+  Future<Query<Map<String, dynamic>>> findByName(String name) async {
+    try {
+      return FirebaseFirestore.instance
+          .collection("notes")
+          .where("userId", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .where("data.title", isGreaterThanOrEqualTo: name)
+          .where("data.title", isLessThanOrEqualTo: name + '\uf8ff');
+    } catch (e) {
+      print("Error searching notes: ${e.toString()}");
+      rethrow;
+    }
+  }
+
+  Future<Query<Map<String, dynamic>>> sortByDate(String name) async {
+    try {
+      final query = FirebaseFirestore.instance
+          .collection("notes")
+          .where("userId", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .orderBy("data.createdAt", descending: true); // Sort by createdAt
+
+      return query;
+    } catch (e) {
+      print("Error searching notes: ${e.toString()}");
+      rethrow;
     }
   }
 }

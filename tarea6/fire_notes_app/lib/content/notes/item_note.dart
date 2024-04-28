@@ -1,3 +1,4 @@
+import 'package:fire_notes_app/create_form/edit_note_form.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../create_form/notes_provider.dart';
@@ -40,7 +41,14 @@ class ItemNote extends StatelessWidget {
               children: [
                 IconButton(
                   icon: Icon(Icons.edit),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => EditNoteForm(
+                            noteContent: noteContent, noteId: noteId),
+                      ),
+                    );
+                  },
                 ),
                 IconButton(
                   icon: Icon(Icons.delete),
